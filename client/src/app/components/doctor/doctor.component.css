@@ -1,0 +1,65 @@
+#doctor-container {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+table {
+    width: 80%;
+    border: 1px #ccc;
+    border-radius: 20px;
+    background-color: #f2f2f2;
+    text-align: center;
+    margin-top: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+tr {
+    border-radius: 20px;
+}
+
+th, td {
+    border: 1px 1px 0px 0px solid #ccc;
+    padding: 5px;
+}
+
+th {
+    background-color: #eee;
+}
+
+button {
+    border: none;
+}
+
+button:hover {
+    color: #87CEEB;
+}
+
+#add-button {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    margin-top: 3%;
+    margin-bottom: 2%;
+    padding: 10px;
+}
+
+.full {
+    margin-left: 4%;
+}
+
+.none {
+    margin-left: -2.5%;
+}
+#plus {
+    margin-left: 4px;
+}
+
+#empty {
+    margin-left: 1%;
+    margin-top: 2%;
+}

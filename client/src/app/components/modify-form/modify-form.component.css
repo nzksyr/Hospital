@@ -1,0 +1,64 @@
+#mod {
+  display: flex;
+  flex-direction: column;
+}
+
+.custom-dialog-content {
+  overflow: hidden;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  height: 100%;
+  width: 500px;
+}
+
+.custom-dialog-content form {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin: 0;
+}
+
+.custom-dialog-content .label {
+  margin-bottom: 10px;
+}
+
+.custom-dialog-content input {
+  width: 100%;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.mat-dialog-actions {
+  margin-top: auto;
+  justify-content: flex-end;
+}
+
+
+.custom-dialog-content input#anneesExperience::-webkit-inner-spin-button,
+.custom-dialog-content input#anneesExperience::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.custom-dialog-content input#anneesExperience {
+  -moz-appearance: textfield;
+}
+
+input {
+  padding-left: 3.5px;
+  padding-top: 3.5px;
+  padding-bottom: 3.5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+input#idMedecin[readonly] {
+  background-color: #f0f0f0;
+  cursor: not-allowed;
+}
+
+.mat-dialog-actions button:first-child:hover {
+  background-color: #87CEEB;
+}

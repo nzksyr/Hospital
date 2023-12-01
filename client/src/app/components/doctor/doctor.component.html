@@ -1,0 +1,43 @@
+<div>
+<app-navbar></app-navbar>
+<div id="doctor-container">
+    <table>
+        <thead>
+          <tr>
+            <th>Identifiant</th>
+            <th>Prénom</th>
+            <th>Nom</th>
+            <th>Spécialité</th>
+            <th>Années d'expérience</th>
+            <th>Identifiant du service</th>
+            <th>Modifier</th>
+            <th>Supprimer</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let d of doctors" class="grid-item" [class.selected]="selectedDoctor === d">
+            <td *ngFor="let key of getObjectKeys(d)">{{ d[key] }}</td>
+            <td>
+              <button (click)="selectDoctor(d); openModifyForm()"><mat-icon>find_replace</mat-icon></button>
+            </td>
+            <td>
+              <button (click)="selectDoctor(d); openConfirmationDialog()"><mat-icon>delete</mat-icon></button>
+            </td>
+          </tr>
+        </tbody>
+    </table>
+    <div *ngIf="doctors.length === 0" id="empty">
+      <table>
+          <tr>
+            <td>
+              <p>
+                  Aucun médecin dans la base de données.
+              </p>
+            </td>
+          </tr>
+        </table>
+  </div>
+    <button id="add-button" (click)="openAddForm()" *ngIf="doctors.length === 0" class="none">Ajouter un médecin <mat-icon id="plus">add</mat-icon></button>
+    <button id="add-button" (click)="openAddForm()" *ngIf="doctors.length !== 0" class="full">Ajouter un médecin <mat-icon id="plus">add</mat-icon></button>
+</div>
+</div>

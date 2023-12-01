@@ -1,0 +1,36 @@
+<div id="addForm">
+    <h2 mat-dialog-title>Ajout d'un nouveau médecin</h2>
+    <div mat-dialog-content class="custom-dialog-content">
+      <form [formGroup]="addForm">
+        <div class="label">
+            <p>Identifiant du médecin</p>
+            <input type="number" formControlName="idmedecin" [placeholder] = "0" id="idMedecin" required min="0">
+          </div>
+        <div class="label">
+          <p>Prénom</p>
+          <input type="text" formControlName="prenom" placeholder="Jean" id="prenom" maxlength="25" pattern="^[a-zA-Z]+(-[a-zA-Z]+)?$" required>
+        </div>
+        <div class="label">
+          <p>Nom</p>
+          <input type="text" formControlName="nom" placeholder="Doe" id="nom" maxlength="20" pattern="^[a-zA-Z]+(-[a-zA-Z]+)?$" required>
+        </div>
+        <div class="label">
+          <p>Spécialité</p>
+          <input type="text" formControlName="specialite" placeholder="Dermatologie" id="specialite" readonly required>
+        </div>
+        <div class="label">
+          <p>Années d'expérience</p>
+          <input type="number" formControlName="anneesexperience" placeholder="0" id="anneesExperience" min="0">
+        </div>
+        <div class="label">
+            <p>Identifiant du service</p>
+            <input type="number" formControlName="idservice" placeholder="0" id="idService" min="0" max="9" (keydown)="handleKeydown($event)">
+          </div>
+      </form>
+    </div>
+    <div mat-dialog-actions>
+      <button mat-button mat-dialog-close type="submit" (click)="onSubmit()">Ajouter</button>
+      <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Annuler</button>
+    </div>
+  </div>
+  

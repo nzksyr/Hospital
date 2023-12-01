@@ -1,0 +1,35 @@
+<div id="mod">
+  <h2 mat-dialog-title>Modification</h2>
+  <div mat-dialog-content class="custom-dialog-content">
+    <form [formGroup]="editForm">
+      <div class="label">
+        <p>Identifiant du médecin</p>
+        <input type="number" formControlName="idmedecin" [placeholder]="selectedDoctor?.idmedecin" readonly id="idMedecin">
+      </div>
+      <div class="label">
+        <p>Prénom</p>
+        <input type="text" formControlName="prenom" [placeholder]="selectedDoctor?.prenom" id="prenom" maxlength="25" pattern="^[a-zA-ZçÇ]+(-[a-zA-ZçÇ]+)?$" required>
+      </div>
+      <div class="label">
+        <p>Nom</p>
+        <input type="text" formControlName="nom" [placeholder]="selectedDoctor?.nom" id="nom" maxlength="20" pattern="^[a-zA-ZçÇ]+(-[a-zA-ZçÇ]+)?$" required>
+      </div>
+      <div class="label">
+        <p>Spécialité</p>
+        <input type="text" formControlName="specialite" [placeholder]="selectedDoctor?.specialite" id="specialite" readonly>
+      </div>
+      <div class="label">
+        <p>Années d'expérience</p>
+        <input type="number" formControlName="anneesexperience" [placeholder]="selectedDoctor?.anneesexperience" id="anneesexperience">
+      </div>
+      <div class="label">
+        <p>Identifiant du service</p>
+        <input type="number" formControlName="idservice" [placeholder]="selectedDoctor?.idservice" id="idservice" (keydown)="handleKeydown($event)">
+      </div>      
+    </form>
+  </div>
+  <div mat-dialog-actions>
+    <button mat-button mat-dialog-close type="submit" (click)="onSubmit()">Modifier</button>
+    <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Annuler</button>
+  </div>
+</div>
